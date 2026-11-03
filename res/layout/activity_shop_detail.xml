@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 顶部的店铺名字 -->
+    <TextView
+        android:id="@+id/tv_detail_shop_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FF9800"
+        android:gravity="center"
+        android:text="店铺名"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 菜品列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dish_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_shop_name" />
+
+    <!-- 底部结算栏 -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F5F5F5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="总计: ¥0.0"
+            android:textColor="#FF5722"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_checkout"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FF9800"
+            android:text="去结算"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
